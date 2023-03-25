@@ -36,7 +36,7 @@ export function UpdateUser() {
 
     function handler1() {
 
-        let promise1 = axios.post("https://eager-stranger-production.up.railway.app/updateuser", user);
+        let promise1 = axios.post("https://eager-stranger-production.up.railway.app/admin/updateuser", user);
         console.log("inHandler1", user)
         promise1.then(response => {
 
