@@ -9,7 +9,7 @@ export function UploadImage() {
 
   useEffect(() => {
     const getCategory = async () => {
-      const res = await axios("http://localhost:8081/getcategories");
+      const res = await axios("http://localhost:8081/admin/getcategories");
       console.log(res.data);
       setCategory(res.data);
     };
@@ -55,7 +55,7 @@ export function UploadImage() {
   const uploadImageWithAdditionalData = (e) => {
     e.preventDefault();
 
-    let promise1 = axios.post("https://eager-stranger-production.up.railway.app/addproduct", imageData, {
+    let promise1 = axios.post("https://eager-stranger-production.up.railway.app/admin/addproduct", imageData, {
       headers: {
         "Content-Type": `multipart/form-data`,
       },
