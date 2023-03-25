@@ -9,7 +9,7 @@ export function UploadImage() {
 
   useEffect(() => {
     const getCategory = async () => {
-      const res = await axios("http://localhost:8081/admin/getcategories");
+      const res = await axios("https://eager-stranger-production.up.railway.app/admin/getcategories");
       console.log(res.data);
       setCategory(res.data);
     };
