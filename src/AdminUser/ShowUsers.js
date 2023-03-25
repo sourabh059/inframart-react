@@ -25,7 +25,7 @@ export function ShowAllUser(props) {
     console.log(Id);
    
     //    alert(Id);
-    let promise1 = axios.delete(`https://eager-stranger-production.up.railway.app/deleteuser/${Id}`);
+    let promise1 = axios.delete(`https://eager-stranger-production.up.railway.app/admin/deleteuser/${Id}`);
     promise1.then(response => {
       console.log(Id);
       const result = response.data;
