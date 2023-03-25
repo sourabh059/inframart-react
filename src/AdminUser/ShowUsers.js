@@ -13,7 +13,7 @@ export function ShowAllUser(props) {
 
   useEffect(() => {
     const getUsers = async () => {
-      const res = await axios('https://eager-stranger-production.up.railway.app/getallusers');
+      const res = await axios('https://eager-stranger-production.up.railway.app/admin/getallusers');
       let u1 = res.data
       setUser(u1);
     };
