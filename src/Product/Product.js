@@ -11,7 +11,7 @@ export function Product() {
   useEffect(() => {
     const getProducts = async (event) => {
       // event.preventDefault();
-      const res = await axios('https://eager-stranger-production.up.railway.app/displayproduct');
+      const res = await axios('https://eager-stranger-production.up.railway.app/admin/displayproduct');
       console.log(res.data);
       setProduct(res.data);
     };
