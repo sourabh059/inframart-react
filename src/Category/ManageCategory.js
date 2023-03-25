@@ -14,7 +14,7 @@ export function ManageCategory() {
   });
   useEffect(() => {
     const getCategory = async () => {
-      const res = await axios("https://eager-stranger-production.up.railway.app/getcategories");
+      const res = await axios("https://eager-stranger-production.up.railway.app/admin/getcategories");
       setCategory(res.data);
     };
 
