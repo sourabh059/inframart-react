@@ -24,7 +24,7 @@ export default function Shop()
 useEffect(() => {
    const getAitem = async (event) => {
      // event.preventDefault();
-     const res = await axios('https://eager-stranger-production.up.railway.app/displayproduct');
+     const res = await axios('https://eager-stranger-production.up.railway.app/admin/displayproduct');
      console.log(res.data);
      setAitem(res.data);
    };
