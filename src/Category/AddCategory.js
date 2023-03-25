@@ -23,7 +23,7 @@ export function AddCategory() {
   }
   function handler1(event) {
     event.preventDefault();
-    let promise1 = axios.post("https://eager-stranger-production.up.railway.app/addcat", category);
+    let promise1 = axios.post("https://eager-stranger-production.up.railway.app/admin/addcat", category);
     promise1.then((response) => {
       const result = response.data;
 
