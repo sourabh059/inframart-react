@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "../Login/Login.css";
 import { useNavigate } from "react-router-dom";
-
+import { apiClient } from '../Api/ApiClient';
 export function Login() {
   const [user, setuser] = useState({
     email: "",
@@ -24,7 +24,7 @@ export function Login() {
 
   function handler1(event) {
     event.preventDefault();
-    let promise1 = axios.post("https://eager-stranger-production.up.railway.app/home/login", user);
+    let promise1 = apiClient.post("/home/login", user);
     promise1.then(response => {
 
       const result = response.data;

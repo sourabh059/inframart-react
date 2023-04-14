@@ -47,13 +47,18 @@ export default function Header() {
                 </a>
               </li>
               <li className="nav-item">
-                <a
+
+
+              {var2==null || var2.role==="user"?<a
                   className="nav-link active"
                   aria-current="page"
                   href="/product"
                 >
                   Product
-                </a>
+                </a>:""}
+
+
+                
               </li>
               <li className="nav-item">
                 {var2==null?<a className="nav-link" href="/login">
@@ -66,15 +71,22 @@ export default function Header() {
                   Signup
                 </a>:""}
               </li>
+
+
+
+
               <li className="nav-item">
-                <a className="nav-link" href="/shopmart">
+              {var2==null? "":<a className="nav-link" href="/shopmart">
                   ShopingMart
-                </a>
+                </a>}
+               
               </li>
+
               <li className="nav-item">
-                <a className="nav-link" href="/checkout">
+              {var2==null?"": <a className="nav-link" href="/checkout">
                   Checkout
-                </a>
+                </a>}
+                
               </li>
               {/* <li className="nav-item">
                 <a className="nav-link" href="/uploadimage">
@@ -82,16 +94,17 @@ export default function Header() {
                 </a>
               </li> */}
               <li className="nav-item">
-                <a className="nav-link" href="/showcart">
+              {var2==null? "": <a className="nav-link" href="/showcart">
                   ShowCart
-                </a>
+                </a>}
+               
               </li>
-              {var2==null?"": var2.role=="admin"?<li className="nav-item">
+              {var2==null?"": var2.role==="admin"?<li className="nav-item">
                 <Link  className="nav-link" to={ "/admin"
                 }>
                  Admin
                 </Link>
-              </li>:var2.role=="manager"?<li className="nav-item">
+              </li>:var2.role==="manager"?<li className="nav-item">
                 <Link  className="nav-link" to={ "/manager"
                 }>
                  Manager

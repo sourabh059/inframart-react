@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import '../Register/Register.css'
 import { useNavigate } from "react-router-dom";
-import { error } from 'jquery';
+import { apiClient } from '../Api/ApiClient';
 
 export function Register() {
 
@@ -25,7 +25,7 @@ export function Register() {
   function handler1(event) {
 
     event.preventDefault();
-    let promise1 = axios.post("https://eager-stranger-production.up.railway.app/home/signup", user);
+    let promise1 = apiClient.post("/home/signup", user);
     promise1.then(response => {
 
       const result = response.data;

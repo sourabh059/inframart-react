@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "../AdminUser/AddAdminUser.css";
 import { useNavigate } from "react-router-dom";
-
+import { apiClient } from '../Api/ApiClient';
 export function AddAdminUser() {
   const [addrole, setAddrole] = useState("");
   const [adduser, setAdduser] = useState({
@@ -21,7 +21,7 @@ export function AddAdminUser() {
 
   function handler1(event) {
     event.preventDefault();
-    let promise1 = axios.post("https://eager-stranger-production.up.railway.app/home/signup", adduser);
+    let promise1 = apiClient.post("/home/signup", adduser);
     promise1.then((response) => {
       const result = response.data;
 

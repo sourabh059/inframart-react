@@ -3,6 +3,8 @@ import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
 
+import { apiClient } from '../Api/ApiClient';
+
 export function AddCategory() {
   const var1 = localStorage.getItem("rolecheck");
   const var2 = JSON.parse(var1);
@@ -23,7 +25,7 @@ export function AddCategory() {
   }
   function handler1(event) {
     event.preventDefault();
-    let promise1 = axios.post("https://eager-stranger-production.up.railway.app/admin/addcat", category);
+    let promise1 = apiClient.post("/addcat", category);
     promise1.then((response) => {
       const result = response.data;
 

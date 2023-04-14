@@ -2,6 +2,7 @@ import axios from "axios";
 import "../Category/Category.css";
 import { useNavigate } from "react-router-dom";
 import { Link, useState, useEffect } from "react";
+import { apiClient } from '../Api/ApiClient';
 
 export function ManageCategory() {
   const var1 = localStorage.getItem("rolecheck");
@@ -14,7 +15,7 @@ export function ManageCategory() {
   });
   useEffect(() => {
     const getCategory = async () => {
-      const res = await axios("https://eager-stranger-production.up.railway.app/admin/getcategories");
+      const res = await apiClient.get("/getcategories");
       setCategory(res.data);
     };
 
@@ -26,7 +27,7 @@ export function ManageCategory() {
   function handlerDelete(Id) {
     console.log(Id);
     // alert(Id);
-    let promise1 = axios.delete(`https://eager-stranger-production.up.railway.app/admin/deletecat/${Id}`);
+    let promise1 = apiClient.delete(`/deletecat/${Id}`);
     promise1.then((response) => {
       console.log(Id);
       const result = response.data;

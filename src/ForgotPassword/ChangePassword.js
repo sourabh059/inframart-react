@@ -1,13 +1,13 @@
 
 import axios from "axios";
 import { useEffect,useState } from "react";
-
+import { apiClient } from '../Api/ApiClient';
 export function ChangePassword() {
 
     const [user, setUser] = useState([]);
     useEffect(() => {
         const getUser = async () => {
-            const res = await axios('https://eager-stranger-production.up.railway.app/');
+            const res = await apiClient.get('/');
             setUser(res.data);
         };
 

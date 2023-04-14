@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { apiClient } from '../Api/ApiClient';
+
 export function UpdateUser() {
 
 
@@ -36,7 +38,7 @@ export function UpdateUser() {
 
     function handler1() {
 
-        let promise1 = axios.post("https://eager-stranger-production.up.railway.app/admin/updateuser", user);
+        let promise1 = apiClient.post("/updateuser", user);
         console.log("inHandler1", user)
         promise1.then(response => {
 

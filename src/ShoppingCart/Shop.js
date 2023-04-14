@@ -1,6 +1,7 @@
 import {useRef, useState,useEffect } from "react"
 import axios from "axios"
 import Add from "./Add"
+import { apiClient } from '../Api/ApiClient';
 //import ShopCart from "./ShopCart"
 import '../ShoppingCart/shopcart.css'
 export default function Shop()
@@ -24,7 +25,7 @@ export default function Shop()
 useEffect(() => {
    const getAitem = async (event) => {
      // event.preventDefault();
-     const res = await axios('https://eager-stranger-production.up.railway.app/admin/displayproduct');
+     const res = await apiClient.get('/displayproduct');
      console.log(res.data);
      setAitem(res.data);
    };

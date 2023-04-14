@@ -8,7 +8,7 @@ export function Manager(){
         <div className="managertable">
                 <table id="adminurl">
                     <a  id="adminurl" href="managedcategory" class="link-primary">Manage_Category</a><br />
-                    <a  id="adminurl" href="uploadimage" class="link-secondary">Manage_Product</a><br />
+                    <a  id="adminurl" href="product" class="link-secondary">Manage_Product</a><br />
                 </table>
             </div>
         </>

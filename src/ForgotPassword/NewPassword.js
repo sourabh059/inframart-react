@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import '../ForgotPassword/Newpassword.css';
+import { apiClient } from "../Api/ApiClient";
 
 export function NewPassword() {
 
@@ -36,7 +37,7 @@ export function NewPassword() {
 
     function handler1(event) {
         event.preventDefault();
-        let promise1 = axios.post("https://eager-stranger-production.up.railway.app/forgotpass/enternewpass", user);
+        let promise1 = apiClient.post("/forgotpass/enternewpass", user);
         promise1.then(response => {
             console.log(response.data)
             const result=response.data;

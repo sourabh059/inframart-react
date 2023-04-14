@@ -1,6 +1,7 @@
 import { useState } from "react"
 import '../ShoppingCart/shopcart.css'
 import axios from "axios"
+import { apiClient } from '../Api/ApiClient';
 
 export default function Add(props) {
 	
@@ -24,7 +25,7 @@ export default function Add(props) {
     function handler2(event) {
 		// event.preventDefault();
 		console.log(cart)
-		let promise1 = axios.post("https://eager-stranger-production.up.railway.app/infraprofile/addtocart",cart, {
+		let promise1 = apiClient.post("/infraprofile/addtocart",cart, {
             params: {
             email: email
             }

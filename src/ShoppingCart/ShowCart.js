@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { apiClient } from '../Api/ApiClient';
 export function ShowCart() {
 
   const navigate=useNavigate();
@@ -16,8 +17,8 @@ export function ShowCart() {
   });
 
   useEffect(() => {
-    let promise1 = axios.post(
-      "https://eager-stranger-production.up.railway.app/infraprofile/getuserbyemail",
+    let promise1 = apiClient.post(
+      "/infraprofile/getuserbyemail",
       user
     );
     promise1.then((response) => {

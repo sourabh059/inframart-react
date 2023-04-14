@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import '../AdminUser/AddAdminUser.css'
+import { apiClient } from '../Api/ApiClient';
 
 export function ShowAllUser(props) {
 
@@ -13,7 +14,7 @@ export function ShowAllUser(props) {
 
   useEffect(() => {
     const getUsers = async () => {
-      const res = await axios('https://eager-stranger-production.up.railway.app/admin/getallusers');
+      const res = await apiClient.get('/getallusers');
       let u1 = res.data
       setUser(u1);
     };
@@ -25,7 +26,7 @@ export function ShowAllUser(props) {
     console.log(Id);
    
     //    alert(Id);
-    let promise1 = axios.delete(`https://eager-stranger-production.up.railway.app/admin/deleteuser/${Id}`);
+    let promise1 = apiClient.delete(`/deleteuser/${Id}`);
     promise1.then(response => {
       console.log(Id);
       const result = response.data;

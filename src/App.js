@@ -9,6 +9,7 @@ import { Login } from './Login/Login';
 import { Register } from './Register/Register';
 import { Product } from './Product/Product';
 import  {Admin} from './Admin/Admin';
+import  { Productmanage} from './Admin/Productmanage';
 import { ManageCategory } from './Category/ManageCategory';
 import { AddCategory } from './Category/AddCategory';
 import { ShowAllUser } from './AdminUser/ShowUsers';
@@ -20,9 +21,9 @@ import { Manager } from './Manager/Manager';
 import {ShopMart} from './ShoppingCart/ShopMart'
 import { UpdateUser } from './AdminUser/UpdateUser';
 import {Checkout} from './Checkout/Checkout';
-import { UploadImage } from './Product/UploadImage';
+import { Addproduct } from './Product/Addproduct';
+import { Updateproduct } from './Product/Updateproduct';
 import { ShowCart } from './ShoppingCart/ShowCart';
-
 
 
 function App() {
@@ -46,7 +47,8 @@ function App() {
       {/* <Route  path='/signin' element={< Signin />}></Route> */}
       <Route  path='/register' element={< Register />}></Route>
       <Route  path='/product' element={< Product />}></Route>
-      <Route  path='/admin' element={<Admin />}></Route>   
+      <Route  path='/admin' element={<Admin />}></Route> 
+      <Route  path='/productmanage' element={<Productmanage />}></Route>   
       <Route  path='/managedcategory' element={<ManageCategory />}></Route>
       <Route  path='/addcategory' element={<AddCategory/>}></Route>
       <Route  path='/showalluser' element={<ShowAllUser/>}></Route>
@@ -58,7 +60,8 @@ function App() {
       <Route  path='/shopmart' element={<ShopMart/>}></Route>
       <Route  path='/userupdate' element={<UpdateUser/>}></Route>
       <Route  path='/checkout' element={<Checkout/>}></Route>
-      <Route  path='/uploadimage' element={<UploadImage/>}></Route>
+      <Route  path='/addproduct' element={<Addproduct/>}></Route>
+      <Route  path='/updateproduct' element={<Updateproduct/>}></Route>
       <Route  path='/showcart' element={<ShowCart/>}></Route>
 
       </Routes>
